@@ -9,6 +9,6 @@ urlpatterns = [
     path('api/', include('rest_api.urls')),
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
-    re_path(r'^.*', TemplateView.as_view(template_name='index.html')),
+    re_path(r'^(?!api).*$', TemplateView.as_view(template_name='index.html')),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
